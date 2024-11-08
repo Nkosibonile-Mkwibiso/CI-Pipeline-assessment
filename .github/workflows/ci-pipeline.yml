@@ -3,10 +3,10 @@ name: .NET CI Pipeline
 on:
   push:
     branches:
-      - main  # Trigger on pushes to the main branch
+      - master  # Trigger on pushes to the master branch
   pull_request:
     branches:
-      - main  # Trigger on PR to the main branch
+      - master  # Trigger on PRs targeting the master branch
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
       - name: Set up .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '7.x'  # Specify your version of .NET
+          dotnet-version: '8.0'  # Specify your version of .NET
 
       - name: Restore dependencies
         run: dotnet restore
